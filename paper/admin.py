@@ -5,7 +5,7 @@ from . import models
 
 class PaperAdmin(admin.ModelAdmin):
     readonly_fields = ['citation']
-    prepopulated_fields = {'slug':['title']}
+    # prepopulated_fields = {'slug':['title']}
     list_display=['__str__','citation','field_research','published_in','type','is_active']
     list_filter = ['field_research', 'is_active']
     list_editable=['citation','type','is_active']
@@ -13,6 +13,7 @@ class PaperAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Paper, PaperAdmin)
 admin.site.register(models.Author)
+admin.site.register(models.Profile)
 admin.site.register(models.Publication)
 admin.site.register(models.PaperTag)
 admin.site.register(models.FieldResearch)

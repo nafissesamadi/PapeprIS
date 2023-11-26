@@ -55,6 +55,7 @@ class ConferencePublication(Publication):
 
 
 
+
 class Author(User):
     affiliation=models.CharField(max_length=300)
 
@@ -65,6 +66,13 @@ class Author(User):
     def __str__(self):
         return f"{self.username}"
 
+class Profile(models.Model):
+    author = models.OneToOneField(Author, on_delete=models.CASCADE)
+    age = models.PositiveSmallIntegerField(default=0)
+    bio = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.author}"
 
 
 
@@ -92,7 +100,7 @@ class Paper(models.Model):
     keywords = models.ManyToManyField(PaperTag, related_name='paper_tags')
     citation = models.IntegerField(verbose_name='Citation', null=True)
     doi = models.CharField(max_length=360, db_index=True, null=True, blank=True ,verbose_name='DOI', unique=True)
-    slug = models.SlugField(default="", null=False, db_index=True, max_length=200)
+    slug = models.SlugField(default="", null=True, blank=True,db_index=True, max_length=200)
     PAPER_TYPE = (
         ('Conf', 'Conference'),
         ('Jour', 'Journal')
@@ -110,9 +118,7 @@ class Paper(models.Model):
     def get_absolute_url(self):
         return reverse('paper-detail', args=[self.slug])
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
+
 
     def __str__(self):
         return f"{self.title} ({self.authors.all()})"
