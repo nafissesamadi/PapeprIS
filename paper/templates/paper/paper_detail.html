@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+  {% block title%} {{paper.title}} {% endblock %}
+
+{% block content %}
+
+        <h1> {{paper.title}} </h1>
+        <h2>number of citations : {{paper.citation}}</h2>
+        <h2>keywords : {{paper.paper_tags.all}}</h2>
+        <h2>keywords : {{paper.paper_tags.keyword}}</h2>
+        <h2>keywords : {{paper.keywords.keyword}}</h2>
+        <h3>keywords : {{paper.keywords.all}}</h3>
+        <h2>Field of Research : {{paper.field_research.title}}</h2>
+
+
+{% endblock %}
