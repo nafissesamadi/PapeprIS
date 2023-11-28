@@ -4,8 +4,14 @@ from account.models import User
 from django.contrib.auth.models import AbstractUser
 from django.shortcuts import render , get_object_or_404
 from django.db.models import Avg
+from django.shortcuts import render
+
 
 # Create your views here.
+
+
+
+
 
 def paper_list(request):
     papers = Paper.objects.all().order_by('-citation')
