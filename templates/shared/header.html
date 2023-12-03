@@ -1,0 +1,45 @@
+
+<header id="header"><!--header-->
+    <div class="header-Top"><!--header-middle-->
+            <div class="row">
+                        <ul class="nav nav-pills">
+                            <li><a href="#"><i class="fa fa-phone"></i> 00989177014931 </a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> nafissesamadi@yahoo.com</a></li>
+                        </ul>
+            </div>
+    </div><!--/header-top-->
+
+
+    <div class="header-middle"><!--header-middle-->
+            <div class="row">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#">account</a></li>
+                            <li><a href="#"> Profile</a></li>
+                            <li><a href="login.html"> Login</a></li>
+                            <li><a href="submitpaper.html"> submit Paper</a></li>
+                            <li><a href="#"> {{ link }}</a></li>
+                        </ul>
+            </div>
+    </div><!--/header-middle-->
+
+    <div class="header-bottom"><!--header-bottom-->
+<!--        <div class="container">-->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="search_box pull-left">
+                        <input type="text" placeholder="search"/>
+                    </div>
+                </div>
+                       <div class="col-sm-3">
+                            <li><a href="home/index_page.html" class="active">Home</a></li>
+                            <li class="dropdown"><a href="#">Journals<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                    <li><a href="{% url 'paper-list' % }">Papers</a></li>
+                                    <li><a href="paper-details.html">Paper's Detail</a></li>
+                                    <li><a href="author.html">Authors</a></li>
+                                    <li><a href="research_field.html">Research Fields</a></li>
+                                    <li><a href="login.html">Publications</a></li>
+                                </ul>
+                            </li>
+                       </div>
+</header><!--/header-->

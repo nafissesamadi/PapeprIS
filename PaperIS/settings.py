@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'home',
     'account',
     'drf',
+    'contact',
     'rest_framework',
+    'django_render_partial'
 
 ]
 

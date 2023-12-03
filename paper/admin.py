@@ -10,6 +10,8 @@ class PaperAdmin(admin.ModelAdmin):
     list_filter = ['field_research', 'is_active']
     list_editable=['citation','type','is_active']
 
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ['username', 'Auth_paper']
 
 admin.site.register(models.Paper, PaperAdmin)
 admin.site.register(models.Author)

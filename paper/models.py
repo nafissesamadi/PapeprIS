@@ -119,7 +119,6 @@ class Paper(models.Model):
         return reverse('paper-detail', args=[self.slug])
 
 
-
     def __str__(self):
         return f"{self.title} ({self.authors.all()})"
 
