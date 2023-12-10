@@ -1,6 +1,20 @@
 from django import forms
+from .models import ContactUs
 
-class ContactUsForm(forms.Form):
-    full_name=forms.CharField()
-    email=forms.EmailField()
-    subject=forms.CharField(widget=forms.Textarea)
+class ContactUsModelForm(forms.ModelForm):
+    class Meta:
+        model = ContactUs
+        fields=['full_name','email','title','message']
+        widgets={
+            'full_name':forms.TextInput(attrs={'class':'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'class': 'form-control','row':5,'id':'message'})
+        }
+        labels={
+            'full_name':'Full Name',
+            'email':'Email',
+        }
+        error_messages={
+            'full_name':{'required':'Name is Mandatory'}
+        }
