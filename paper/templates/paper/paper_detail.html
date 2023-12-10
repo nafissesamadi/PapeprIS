@@ -3,12 +3,31 @@
   {% block title%} {{paper.title}} {% endblock %}
 
 {% block content %}
+<section>
+            <div class="row">
+                {% if is_favorite %}
+                    <div class="col-md-12">
+                        <p>
+                            This is my favorite Paper
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+</section>
 
         <h1> {{paper.title}} </h1>
         <h2>number of citations : {{paper.citation}}</h2>
         <h2>keywords : {{paper.keywords.all}}</h2>
         <h2>Authors : {{paper.authors.all}}</h2>
         <h2>Field of Research : {{paper.field_research.title}}</h2>
+
+<form action="{% url 'paper-favorite' %}" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="paper_id" value="{{ paper.id }}">
+    <button type="submit" class="btn btn-fefault cart">
+        My Favorite Paper
+    </button>
+</form>
 
 
 {% endblock %}

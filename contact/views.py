@@ -10,4 +10,5 @@ def contact_us_page(request):
             return redirect('home-page')
     else:
         contact_form=ContactUsForm()
-        return render(request, 'contact/contact_us_page.html',{'contact_form':contact_form})
+        return render(request, 'contact/contact_us_page.html', {'contact_form': contact_form})
+

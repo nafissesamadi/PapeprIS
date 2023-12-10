@@ -23,7 +23,7 @@
     </div><!--/header-middle-->
 
     <div class="header-bottom"><!--header-bottom-->
-<!--        <div class="container">-->
+
             <div class="row">
                 <div class="col-sm-3">
                     <div class="search_box pull-left">
@@ -34,12 +34,15 @@
                             <li><a href="home/index_page.html" class="active">Home</a></li>
                             <li class="dropdown"><a href="#">Journals<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
-                                    <li><a href="{% url 'paper-list' % }">Papers</a></li>
+                                    <li><a href="{% url 'paper-list' %}">Papers</a></li>
                                     <li><a href="paper-details.html">Paper's Detail</a></li>
                                     <li><a href="author.html">Authors</a></li>
                                     <li><a href="research_field.html">Research Fields</a></li>
                                     <li><a href="login.html">Publications</a></li>
+                                    <li><a href="{% url 'contact_us_page' %}">Contact Us</a></li>
                                 </ul>
                             </li>
                        </div>
+            </div>
+    </div>
 </header><!--/header-->

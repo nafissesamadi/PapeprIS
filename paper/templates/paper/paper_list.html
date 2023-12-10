@@ -1,16 +1,17 @@
-{% extends 'shared/_layout.html' %}
 
-  {% block title%} paper list {% endblock %}
+	{% block title %} Paper List {% endblock %}
 
 {% block content %}
     <ul>
         {% for paper in paper %}
       <li>
-
-              <a href="{{paper.get_absolute_url}}"
+          <p> Paper ID is ({{paper.id}})</p>
+          <a href="{{paper.get_absolute_url}}"
              style="color: black; text-decoration: none">
               {{paper.title}} / citation: ({{paper.citation}})</a>
       </li>
+
+
         {% endfor %}
     </ul>
     <p>
